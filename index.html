@@ -18,34 +18,28 @@
         />
     </head>
 
-    <body class="text-center">
-       <h1> CALCOLA IL PREZZO DEL BIGLIETTO</h1>
-       <div class="container">
-        <div class="row justify-content-evenly">
-            <div class="col-4">
-                <span>Nome Cognome</span>
-                <input type="text" name="" id="nome" required>
-            </div>
-            <!-- /.col-4 -->
-            <div class="col-4 ">
-                <span>Km da perco</span>
-                <input type="text" name="" id="km" required>
-            </div>
-            <!-- /.col-4 -->
-            <div class="col-4">
-                <span>Fascia d'et&agrave;</span>
-                <select name="eta" id="eta" required>
-                    <option value="maggiore">Maggiorenne</option>
-                    <option value="minore">Minorenne</option>
-                    <option value="over">Over 65</option>
-                  </select>
-            </div>
-            <!-- /.col-4 -->
-             
-        </div>
-        <!-- /.row -->
-         <input type="submit" value="submit" required>
-       </div>
-       <!-- /.container -->
+    <h1>Calcolo Prezzo Biglietto</h1>
+    <form id="form">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" required>
+        
+        <label for="cognome">Cognome:</label>
+        <input type="text" id="cognome" required>
+        
+        <label for="km">Chilometri da percorrere:</label>
+        <input type="number" id="km" required>
+        
+        <label for="eta">Età del passeggero:</label>
+        <select id="eta" required>
+            <option value="minorenne">Minorenne </option>
+            <option value="maggiorenne">Maggiorenne </option>
+            <option value="over65">Over 65 </option>
+        </select>
+        
+        <button type="submit">Calcola Prezzo</button>
+    </form>
+    <div id="risultato" class="biglietto"></div>
+
+<script src="./javascript/main.js"></script>
     </body>
 </html>
