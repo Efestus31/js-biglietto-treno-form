@@ -9,5 +9,19 @@ document.getElementById('form').addEventListener('submit', function(event) {
     let prezzoFinale;
     let categoria;
 
+    if (eta === "minorenne") {
+         // sconto del 20% per i minorenni
+        prezzoFinale = prezzoBase * 0.80;
+        categoria = "Minorenne";
+    } else if (eta === "maggiorenne") {
+       // prezzo normale per i maggiorenni
+        prezzoFinale = prezzoBase; 
+        categoria = "Maggiorenne";
+    } else {
+        // sconto del 40% per gli over 65
+        prezzoFinale = prezzoBase * 0.60; 
+        categoria = "Over 65";
+    }
+
 
 });
