@@ -14,11 +14,11 @@ document.getElementById('form').addEventListener('submit', function(event) {
         prezzoFinale = prezzoBase * 0.80; 
         categoria = "Minorenne";
     } else if (eta === "maggiorenne") {
-    // prezzo normale per i maggiorenni
+        // prezzo normale per i maggiorenni
         prezzoFinale = prezzoBase; 
         categoria = "Maggiorenne";
     } else {
-    // sconto del 40% per gli over 65
+        // sconto del 40% per gli over 65
         prezzoFinale = prezzoBase * 0.60; 
         categoria = "Over 65";
     }
@@ -29,12 +29,29 @@ document.getElementById('form').addEventListener('submit', function(event) {
 
     // Mostra il biglietto
     document.getElementById('risultato').innerHTML = `
-        <h2>Biglietto Standard</h2>
-        <p>Nome: ${nome} ${cognome}</p>
-        <p>Carrozza: ${carrozza}</p>
-        <p>Chilometri: ${km}</p>
-        <p>Categoria: ${categoria}</p>
-        <p>Prezzo: ${prezzoFinale.toFixed(2)} €</p>
-        <p>Codice CP: ${codiceCP}</p>
+        <div class="biglietto">
+            <h2>DETTAGLIO PASSEGGERI</h2>
+            <div class="dettagli">
+                <div><strong>NOME PASSEGGERO:</strong> ${nome} ${cognome}</div>
+                <hr>
+                <div class="offerta">OFFERTA:</div>
+                <div>Biglietto Standard</div>
+                <hr>
+                <div class="carrozza">CARROZZA:</div>
+                <div>${carrozza}</div>
+                <hr>
+                <div class="codiceCP">CODICE CP:</div>
+                <div>${codiceCP}</div>
+                <hr>
+                <div class="costo">COSTO BIGLIETTO:</div>
+                <div>${prezzoFinale.toFixed(2)} €</div>
+            </div>
+        </div>
     `;
+});
+
+// Aggiungi l'evento per il pulsante "Annulla"
+document.getElementById('annulla').addEventListener('click', function() {
+    document.getElementById('form').reset(); // Reset del modulo
+    document.getElementById('risultato').innerHTML = ''; // Cancella il biglietto visualizzato
 });
